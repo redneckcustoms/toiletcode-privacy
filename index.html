@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ToiletCode — Privacy Policy</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,7 +20,7 @@
       text-align: center;
     }
     header h1 { font-size: 26px; margin-bottom: 4px; }
-    header p  { font-size: 14px; opacity: 0.8; }
+    header p { font-size: 14px; opacity: 0.8; }
     main {
       max-width: 720px;
       margin: 0 auto;
@@ -33,7 +33,7 @@
       padding-bottom: 6px;
       border-bottom: 1px solid #e0e0e0;
     }
-    p  { margin-bottom: 12px; font-size: 15px; color: #333; }
+    p { margin-bottom: 12px; font-size: 15px; color: #333; }
     ul { margin: 8px 0 12px 20px; }
     li { margin-bottom: 6px; font-size: 15px; color: #333; }
     .badge {
@@ -57,90 +57,91 @@
 </head>
 <body>
 
-<header>
-  <h1>🚽 ToiletCode</h1>
-  <p>Privacy Policy</p>
-</header>
+  <header>
+    <h1>🚽 ToiletCode</h1>
+    <p>Privacy Policy</p>
+  </header>
 
-<main>
-  <p style="margin-top: 24px;">
+  <main>
     <span class="badge">Anonymous &amp; No Registration</span>
-  </p>
 
-  <p>
-    ToiletCode ("we", "the app") is a crowdsourced map for sharing toilet access codes.
-    This Privacy Policy explains what information we collect and how we use it.
-  </p>
+    <p>
+      ToiletCode ("we", "the app") is a crowdsourced map for sharing toilet access codes.
+      This Privacy Policy explains what information we collect and how we use it.
+    </p>
 
-  <h2>1. Information We Collect</h2>
-  <p>We collect only the minimum data necessary to operate the app:</p>
-  <ul>
-    <li><strong>Anonymous device ID</strong> — automatically assigned by Firebase Authentication. No name, email, or phone number is required. You never create an account.</li>
-    <li><strong>Place data you submit</strong> — name, address, toilet code, and optional comment for locations you add to the map.</li>
-    <li><strong>Votes</strong> — when you vote on a code (working / outdated), your anonymous device ID and the vote timestamp are stored to prevent duplicate voting.</li>
-    <li><strong>Feedback</strong> — if you submit a bug report or suggestion, the text you write is stored anonymously with no identifying information.</li>
-    <li><strong>Location</strong> — your device location is used only to center the map and filter nearby places. We do not store or transmit your location to our servers.</li>
-  </ul>
+    <h2>1. Information We Collect</h2>
+    <p>We collect only the minimum data necessary to operate the app:</p>
+    <ul>
+      <li><strong>Anonymous device ID</strong> — automatically assigned by Firebase Authentication. No name, email, or phone number is required. You never create an account.</li>
+      <li><strong>Place data you submit</strong> — name, address, coordinates, toilet code (or "no code" / "checker" flags), and optional comment for locations you add to the map.</li>
+      <li><strong>Votes</strong> — when you vote on a code (working / outdated), your anonymous device ID and a timestamp are stored to prevent duplicate voting (one vote per device per place every 24 hours).</li>
+      <li><strong>Reports</strong> — when you report a place (spam, duplicate, wrong location, or closed), we store the reason, the place ID, and your anonymous device ID, so each device can only report a place once.</li>
+      <li><strong>Achievement progress</strong> — counters of how many places you added or voted on, and a list of city names you contributed to. Stored under your anonymous device ID so that achievements persist if you reinstall the app.</li>
+      <li><strong>Feedback</strong> — if you submit a bug report or suggestion, the text is stored anonymously, without your device ID.</li>
+      <li><strong>Location</strong> — your device location is used only on-device to center the map and filter nearby places. We do not transmit your location to our servers.</li>
+    </ul>
 
-  <h2>2. Information We Do NOT Collect</h2>
-  <ul>
-    <li>Name, email address, or phone number</li>
-    <li>Account credentials or passwords</li>
-    <li>Payment or financial information</li>
-    <li>Contacts, photos, or media</li>
-    <li>Persistent location history</li>
-    <li>Device identifiers beyond the anonymous Firebase UID</li>
-  </ul>
+    <h2>2. Information We Do NOT Collect</h2>
+    <ul>
+      <li>Name, email address, or phone number</li>
+      <li>Account credentials or passwords</li>
+      <li>Payment or financial information</li>
+      <li>Contacts, photos, or media</li>
+      <li>Persistent location history</li>
+      <li>Device identifiers beyond the anonymous Firebase UID</li>
+    </ul>
 
-  <h2>3. How We Use Your Information</h2>
-  <ul>
-    <li>To display toilet codes and place information on the map</li>
-    <li>To prevent duplicate votes within 24 hours</li>
-    <li>To limit spam (max 5 new places per device per day)</li>
-    <li>To review anonymous feedback and improve the app</li>
-  </ul>
+    <h2>3. How We Use Your Information</h2>
+    <ul>
+      <li>To display toilet codes and place information on the map</li>
+      <li>To prevent duplicate votes within 24 hours</li>
+      <li>To prevent duplicate reports of the same place from the same device</li>
+      <li>To preserve achievement progress across reinstalls</li>
+      <li>To review anonymous feedback and improve the app</li>
+    </ul>
 
-  <h2>4. Data Storage &amp; Security</h2>
-  <p>
-    All data is stored in <strong>Google Firebase Firestore</strong>, hosted in the
-    <strong>EU (europe-west3)</strong> region. Firebase applies industry-standard
-    encryption in transit (HTTPS/TLS) and at rest.
-  </p>
-  <p>
-    Security rules are in place to ensure users can only modify their own votes and
-    cannot delete place records.
-  </p>
+    <h2>4. Data Storage &amp; Security</h2>
+    <p>
+      All data is stored in Google Firebase Firestore, hosted in the
+      EU (<code>europe-west3</code>) region. Firebase applies industry-standard
+      encryption in transit (HTTPS/TLS) and at rest.
+    </p>
+    <p>
+      Security rules are in place to ensure users can only modify their own votes and reports,
+      cannot delete place records, and cannot read other users' achievement counters.
+    </p>
 
-  <h2>5. Third-Party Services</h2>
-  <ul>
-    <li><strong>Google Firebase</strong> — database, anonymous authentication, analytics. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a></li>
-    <li><strong>Google Maps</strong> — map rendering and address geocoding. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
-    <li><strong>Ko-fi</strong> — optional donation button. Only activated if you tap it. <a href="https://ko-fi.com/privacy" target="_blank">Ko-fi Privacy Policy</a></li>
-  </ul>
+    <h2>5. Third-Party Services</h2>
+    <ul>
+      <li><strong>Google Firebase</strong> — Firestore database and anonymous authentication only. We do not use Firebase Analytics, Performance Monitoring, or Crashlytics. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a></li>
+      <li><strong>Google Maps Platform</strong> — map rendering, address geocoding, and (via Places API) business name autofill and nearby place suggestions. When you use these features, your IP address and the relevant query (e.g., a search string or your map center) are sent to Google. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>Ko-fi</strong> — optional donation button. Only activated if you tap it. <a href="https://ko-fi.com/manage/privacy" target="_blank" rel="noopener">Ko-fi Privacy Policy</a></li>
+    </ul>
 
-  <h2>6. Children's Privacy</h2>
-  <p>
-    ToiletCode does not knowingly collect any information from children under 13.
-    The app does not require registration and collects no personal data,
-    making it safe for all ages.
-  </p>
+    <h2>6. Children's Privacy</h2>
+    <p>
+      ToiletCode does not knowingly collect any information from children under 13.
+      The app does not require registration and collects no personal data,
+      making it safe for all ages.
+    </p>
 
-  <h2>7. Your Rights</h2>
-  <p>Since we do not collect personal data tied to your identity, there is nothing to access, correct, or delete on our end. Your anonymous device ID cannot be linked back to you.</p>
-  <p>
-    If you have questions or concerns, contact us at:
-    <strong> redneck.customs.production@gmail.com</strong>
-  </p>
+    <h2>7. Your Rights</h2>
+    <p>Since we do not collect personal data tied to your identity, there is nothing to access, correct, or delete on our end. Your anonymous device ID cannot be linked back to you.</p>
+    <p>
+      If you have questions or concerns, contact us at:
+      <a href="mailto:redneck.customs.production@gmail.com">redneck.customs.production@gmail.com</a>
+    </p>
 
-  <h2>8. Changes to This Policy</h2>
-  <p>
-    We may update this policy as the app evolves. The "Last updated" date below
-    will reflect any changes. Continued use of the app after changes constitutes
-    acceptance of the updated policy.
-  </p>
+    <h2>8. Changes to This Policy</h2>
+    <p>
+      We may update this policy as the app evolves. The "Last updated" date below
+      will reflect any changes. Continued use of the app after changes constitutes
+      acceptance of the updated policy.
+    </p>
 
-  <p class="updated">Last updated: May 2, 2026</p>
-</main>
+    <p class="updated">Last updated: May 8, 2026</p>
+  </main>
 
 </body>
 </html>
